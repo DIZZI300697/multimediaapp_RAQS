@@ -29,7 +29,7 @@ public class VideoActivity extends AppCompatActivity {
         rewindButton = findViewById(R.id.btnRewind);
         forwardButton = findViewById(R.id.btnForward);
 
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.your_video_file;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video1;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 

@@ -38,7 +38,7 @@ public class VideoSurfaceViewActivity extends AppCompatActivity {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
                 mediaPlayer = new MediaPlayer();
-                String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.your_video_file;
+                String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video2;
                 Uri uri = Uri.parse(videoPath);
                 try {
                     mediaPlayer.setDataSource(VideoSurfaceViewActivity.this, uri);

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/fondo5"
     android:padding="16dp">
 
     <VideoView
@@ -59,5 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:padding="16dp"
+        android:backgroundTint="#43A047"
+        android:textColor="@color/white"
         android:text="Regresar" />
 </LinearLayout>

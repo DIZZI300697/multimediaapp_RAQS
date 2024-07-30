@@ -23,7 +23,7 @@ public class AudioActivity extends AppCompatActivity {
         btnStop = findViewById(R.id.btnStop);
         btnBack = findViewById(R.id.btnBack);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.audio_file); // Asegúrate de tener un archivo de audio en res/raw/audio_file.mp3
+        mediaPlayer = MediaPlayer.create(this, R.raw.audio_file);
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override

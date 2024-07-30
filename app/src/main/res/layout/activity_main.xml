@@ -5,36 +5,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/fondo2"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnAudio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Audio" />
+        android:text="Audio"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnVideo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video" />
+        android:text="Video"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnVideoSurfaceView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video SurfaceView" />
+        android:text="Video SurfaceView"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnVideoView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video (VideoView)" />
+        android:text="Video (VideoView)"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="@color/black"
         android:text="Foto" />
 
 </LinearLayout>

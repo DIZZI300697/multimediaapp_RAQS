@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/fondo"
     android:padding="16dp">
 
     <ImageView
@@ -19,11 +20,14 @@
         android:layout_height="wrap_content"
         android:text="Tomar Foto"
         android:drawableLeft="@drawable/ic_camera"
+        android:textColor="@color/white"
         android:background="?android:attr/selectableItemBackgroundBorderless" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#83291D"
+        android:textColor="@color/white"
         android:text="Regresar" />
 </LinearLayout>

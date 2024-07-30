@@ -1,57 +1,59 @@
 package com.example.multimediaapp;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.ImageButton;
 
 public class AudioActivity extends AppCompatActivity {
 
+    private ImageButton btnPlay, btnPause, btnStop;
+    private Button btnBack;
     private MediaPlayer mediaPlayer;
-    private Button playButton;
-    private Button pauseButton;
-    private Button stopButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.your_audio_file);
+        btnPlay = findViewById(R.id.btnPlay);
+        btnPause = findViewById(R.id.btnPause);
+        btnStop = findViewById(R.id.btnStop);
+        btnBack = findViewById(R.id.btnBack);
 
-        playButton = findViewById(R.id.btnPlay);
-        pauseButton = findViewById(R.id.btnPause);
-        stopButton = findViewById(R.id.btnStop);
+        mediaPlayer = MediaPlayer.create(this, R.raw.audio_file); // Asegúrate de tener un archivo de audio en res/raw/audio_file.mp3
 
-        playButton.setOnClickListener(new View.OnClickListener() {
+        btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.start();
+                if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
+                    mediaPlayer.start();
+                }
             }
         });
 
-        pauseButton.setOnClickListener(new View.OnClickListener() {
+        btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mediaPlayer.isPlaying()) {
+                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
                     mediaPlayer.pause();
                 }
             }
         });
 
-        stopButton.setOnClickListener(new View.OnClickListener() {
+        btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mediaPlayer.isPlaying()) {
+                if (mediaPlayer != null) {
                     mediaPlayer.stop();
-                    mediaPlayer = MediaPlayer.create(AudioActivity.this, R.raw.your_audio_file);
+                    mediaPlayer = MediaPlayer.create(AudioActivity.this, R.raw.audio_file);
                 }
             }
         });
 
-        findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -61,10 +63,10 @@ public class AudioActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
         }
+        super.onDestroy();
     }
 }
